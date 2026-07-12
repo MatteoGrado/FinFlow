@@ -1,2 +1,11 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+# Keep GitHub language stats focused on Java sources.
+.gitattributes linguist-generated=true
+.gitignore linguist-generated=true
+mvnw linguist-generated=true
+*.cmd linguist-generated=true
+*.yaml linguist-generated=true
+*.yml linguist-generated=true
+*.properties linguist-generated=true
