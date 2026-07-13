@@ -1,19 +1,22 @@
 spring:
   config:
-    import: optional:file:./env.properties
+    import: optional:file:./env.properties,optional:file:./config/rabbitmq.yaml
   application:
     name: FinFlow
+app:
+  ocr:
+    storage-dir: ${APP_OCR_STORAGE_DIR:./data/ocr}
   datasource:
     url: ${APP_DATASOURCE_URL}
     username: ${APP_DATASOURCE_USERNAME}
     password: ${APP_DATASOURCE_PASSWORD}
-    driver-class-name: ${APP_DATASOURCE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+    driver-class-name: ${APP_DATASOURCE_DRIVER_CLASS_NAME:org.postgresql.Driver}
   jpa:
     hibernate:
       ddl-auto: ${APP_JPA_DDL_AUTO:update}
     properties:
       hibernate:
-        dialect: ${APP_JPA_DIALECT:org.hibernate.dialect.MySQLDialect}
+        dialect: ${APP_JPA_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
   rabbitmq:
     host: ${APP_RABBITMQ_HOST}
     port: ${APP_RABBITMQ_PORT}

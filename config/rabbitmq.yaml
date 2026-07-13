@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    host: ${APP_RABBITMQ_HOST}
+    port: ${APP_RABBITMQ_PORT}
+    username: ${APP_RABBITMQ_USERNAME}
+    password: ${APP_RABBITMQ_PASSWORD}
+
+workflow:
+  rabbitmq:
+    queue: workflow
+    exchange: workflow
+    routing-key: workflow
+    durable: true
